@@ -1,0 +1,135 @@
+/* Custom Neon Color Variables */
+:root {
+  --bg-color: #0d1117;     /* Deep sleek carbon black */
+  --neon-green: #00ff66;   /* Electric cyber green */
+  --glow-color: rgba(0, 255, 102, 0.4);
+}
+
+/* Base Body Styling */
+body {
+  background-color: var(--bg-color);
+  color: var(--neon-green);
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cool Retro Scanline Effect on Background */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Main Terminal Container */
+.tab-container {
+  width: 100%;
+  max-width: 650px;
+  background: #000000;
+  padding: 30px;
+  border: 2px solid var(--neon-green);
+  box-shadow: 0 0 15px var(--glow-color), inset 0 0 15px rgba(0, 255, 102, 0.1);
+  border-radius: 10px;
+  position: relative;
+  z-index: 5;
+}
+
+/* Style the Navigation Tabs */
+.tabs-wrapper {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+label {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  border: 1px solid var(--neon-green);
+  color: var(--neon-green);
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Hover & Active Glowing Tab States */
+label:hover {
+  background: rgba(0, 255, 102, 0.1);
+  box-shadow: 0 0 10px var(--glow-color);
+}
+
+input[type="radio"]:checked + label {
+  background: var(--neon-green);
+  color: #000000;
+  box-shadow: 0 0 20px var(--neon-green);
+}
+
+/* Hide Radio Buttons */
+input[type="radio"] {
+  display: none;
+}
+
+/* Content Boxes */
+.section-content {
+  display: none;
+  border: 1px solid rgba(0, 255, 102, 0.3);
+  padding: 25px;
+  background: rgba(13, 17, 23, 0.8);
+  border-radius: 5px;
+}
+
+/* Header Glowing Text */
+h1, h2 {
+  color: #ffffff;
+  text-shadow: 0 0 8px var(--neon-green);
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: 1px;
+}
+
+/* Animated Pulse Button for Geodash */
+.play-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 15px 30px;
+  color: #000000;
+  background: var(--neon-green);
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 3px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px var(--neon-green);
+  transition: transform 0.2s ease;
+  animation: pulse 2s infinite;
+}
+
+.play-btn:hover {
+  transform: scale(1.05);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 5px var(--neon-green); }
+  50% { box-shadow: 0 0 25px var(--neon-green); }
+  100% { box-shadow: 0 0 5px var(--neon-green); }
+}
+
+/* Logic to switch sections */
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3 {
+  display: block;
+}
