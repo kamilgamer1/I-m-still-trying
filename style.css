@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar">
+    <div class="logo">CONTROL</div>
+    <ul class="nav-links">
+      <li>
+        <input type="radio" id="tab1" name="nav" checked>
+        <label for="tab1">Home</label>
+      </li>
+      <li>
+        <input type="radio" id="tab2" name="nav">
+        <label for="tab2">Games</label>
+      </li>
+      <li>
+        <input type="radio" id="tab3" name="nav">
+        <label for="tab3">Settings</label>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="content">
+    
+    <!-- Section 1: Home -->
+    <div class="section" id="content1">
+      <h1>Welcome Back</h1>
+      <div class="grid">
+        <div class="card card-red">
+          <h3>Active Users</h3>
+          <p class="big-number">1,240</p>
+        </div>
+        <div class="card">
+          <h3>System Status</h3>
+          <p class="status green">Operational</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Games -->
+    <div class="section" id="content2">
+      <h1>My Library</h1>
+      <div class="grid">
+        <div class="card game-card">
+          <h3>Geo Dash</h3>
+          <p>Launch your favorite physics runner.</p>
+          <a href="geodash.html" class="action-btn">PLAY GAME</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Settings -->
+    <div class="section" id="content3">
+      <h1>Account Settings</h1>
+      <div class="card">
+        <h3>Theme Preferences</h3>
+        <p>You are currently using the Matte Red and Dark Charcoal theme.</p>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>
