@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Matte Dashboard</title>
+    <!-- Link to your CSS file or paste the CSS here inside a <style> tag -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. The Controller Radios (Kept at root for CSS sibling selector logic) -->
+    <input type="radio" id="tab1" name="dashboard-tabs" checked>
+    <input type="radio" id="tab2" name="dashboard-tabs">
+    <input type="radio" id="tab3" name="dashboard-tabs">
+
+    <!-- 2. Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="logo">DASHBOARD</div>
+        <ul class="nav-links">
+            <li>
+                <label for="tab1">Overview</label>
+            </li>
+            <li>
+                <label for="tab2">Analytics</label>
+            </li>
+            <li>
+                <label for="tab3">Settings</label>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- 3. Main Content Wrapper -->
+    <main class="content">
+
+        <!-- SECTION 1: OVERVIEW -->
+        <div class="section" id="content1">
+            <h1>Overview</h1>
+            
+            <div class="grid">
+                <!-- Standard Matte Card -->
+                <div class="card">
+                    <h3>Total Revenue</h3>
+                    <p class="big-number">$24,500</p>
+                    <a href="#" class="action-btn">View Report</a>
+                </div>
+
+                <!-- Red Accent Card -->
+                <div class="card card-red">
+                    <h3>Active Users</h3>
+                    <p class="big-number">1,240</p>
+                    <a href="#" class="action-btn" style="background-color: rgba(255,255,255,0.2);">See All</a>
+                </div>
+
+                <!-- Standard Matte Card -->
+                <div class="card">
+                    <h3>Conversion Rate</h3>
+                    <p class="big-number">12.4%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: ANALYTICS -->
+        <div class="section" id="content2">
+            <h1>Analytics</h1>
+            <div class="grid">
+                <div class="card">
+                    <h3>Page Views</h3>
+                    <p class="big-number">84,120</p>
+                </div>
+                <div class="card">
+                    <h3>Bounce Rate</h3>
+                    <p class="big-number">32.1%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: SETTINGS -->
+        <div class="section" id="content3">
+            <h1>Settings</h1>
+            <div class="grid">
+                <div class="card">
+                    <h3>Account Settings</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Manage your profile and preferences here.</p>
+                    <a href="#" class="action-btn">Edit Profile</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>
