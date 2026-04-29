@@ -1,0 +1,162 @@
+/* Color Palette */
+:root {
+  --bg-main: #121417;       /* Off-black charcoal */
+  --bg-sidebar: #1a1d24;    /* Dark slate gray */
+  --accent-red: #d32f2f;    /* Deep matte red */
+  --hover-red: #b71c1c;     /* Darker red hover */
+  --text-primary: #ffffff;  /* Pure white */
+  --text-muted: #8b949e;    /* Cool gray */
+  --card-bg: rgba(255, 255, 255, 0.03); /* Subtle glass tint */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar Layout */
+.sidebar {
+  width: 240px;
+  background-color: var(--bg-sidebar);
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  padding: 30px 20px;
+  color: var(--accent-red);
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  width: 100%;
+}
+
+.nav-links input[type="radio"] {
+  display: none; /* Hide standard buttons */
+}
+
+/* Sidebar Clickable Tabs */
+.nav-links label {
+  display: block;
+  padding: 15px 25px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.nav-links label:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+  color: var(--text-primary);
+}
+
+/* Active tab style */
+.nav-links input[type="radio"]:checked + label {
+  background-color: rgba(211, 47, 47, 0.1);
+  color: var(--accent-red);
+  border-left: 4px solid var(--accent-red);
+  padding-left: 21px; /* Account for the border */
+}
+
+/* Main Content Wrapper */
+.content {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+/* Hide content blocks by default */
+.section {
+  display: none;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Grid System for Dashboard */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Modern Matte Cards */
+.card {
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 25px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.big-number {
+  font-size: 42px;
+  font-weight: 800;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+/* Red Accent Card */
+.card-red {
+  background: linear-gradient(135deg, var(--accent-red), var(--hover-red));
+  border: none;
+}
+
+.card-red h3, .card-red .big-number {
+  color: #ffffff;
+}
+
+/* Active buttons */
+.action-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: var(--accent-red);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.action-btn:hover {
+  background-color: var(--hover-red);
+}
+
+/* Logic to display sections on click */
+#tab1:checked ~ .content #content1,
+#tab2:checked ~ .content #content2,
+#tab3:checked ~ .content #content3 {
+  display: block;
+}
